@@ -1,0 +1,130 @@
+---
+
+---
+
+<section class="hero">
+  <div class="hero_content hero_item">
+    <h1 class="hero_title">Transformamos tus ideas en realidad digital</h1>
+    <p class="hero_subtitle">
+      En <strong>Algeria Full Stack Dev</strong>, creamos soluciones web a
+      medida que impulsan tu negocio.
+    </p>
+  </div>
+
+  <div class="hero_image hero_item">
+    <div class="hero_actions">
+      <a href="/servicios" class="btn_primary">Nuestros Servicios</a>
+      <a href="/contacto" class="btn_secondary">Contáctanos</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    --item_padding: 1.5vw;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+
+    .hero_item {
+      min-height: 50vh;
+      min-height: 50dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 var(--item_padding);
+
+      @media (width > 1024px) {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+    }
+
+    @media (width > 1024px) {
+      grid-template-columns: repeat(2, 50dvw);
+    }
+  }
+
+  .hero_title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .hero_subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero_actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn_primary,
+  .btn_secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .btn_primary {
+    background: #ffffff;
+    color: #1e3a8a;
+  }
+
+  .btn_secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .hero_image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url('/world_conextion.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: calc(100% - var(--item_padding) * 2);
+  }
+
+  @media (width > 1024px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero_title {
+      font-size: 2rem;
+    }
+
+    .hero_subtitle {
+      font-size: 1rem;
+    }
+
+    .hero_actions {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hero_image img {
+      min-width: 100%;
+      margin-top: 2rem;
+    }
+  }
+</style>
