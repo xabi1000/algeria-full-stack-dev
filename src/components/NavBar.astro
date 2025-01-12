@@ -1,33 +1,46 @@
-<div class="menu-wrap">
+---
+import { links } from '../js/helpers.js';
+import { Icon } from 'astro-icon/components';
+
+const ICONS = [
+  { icon: 'twitter' },
+  { icon: 'facebook' },
+  { icon: 'instagram' },
+  { icon: 'linkedin' },
+];
+---
+
+<div class="contenedor-menu">
   <!-- Input para controlar el estado del menú -->
   <input
     type="checkbox"
-    class="toggler"
-    id="menu-toggler"
-    aria-label="Toggle menu"
+    class="interruptor-menu"
+    id="interruptor-menu"
+    aria-label="Alternar menú"
     aria-expanded="false"
   />
 
   <!-- Botón de hamburguesa -->
-  <label for="menu-toggler" class="hamburger" aria-hidden="true">
+  <label for="interruptor-menu" class="boton-hamburguesa" aria-hidden="true">
     <div></div>
   </label>
 
   <!-- Menú de navegación -->
   <div class="menu" role="navigation">
-    <div>
-      <div>
+    <div class="contenido-menu">
+      <div class="lista-menu">
         <ul role="menu">
-          <li role="none"><a href="#" role="menuitem" tabindex="0">Home</a></li>
-          <li role="none">
-            <a href="#" role="menuitem" tabindex="0">About</a>
-          </li>
-          <li role="none">
-            <a href="#" role="menuitem" tabindex="0">Services</a>
-          </li>
-          <li role="none">
-            <a href="#" role="menuitem" tabindex="0">Contact</a>
-          </li>
+          {
+            links.map((link, index) => (
+              <li role="menuitem">
+                <a href={link.url}>
+                  {' '}
+                  {link.text}
+                  <Icon name={`mdi:${ICONS[index].icon}`} />
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
@@ -36,102 +49,105 @@
 
 <style>
   :root {
-    --primary-color: rgba(13, 110, 139, 0.75);
-    --overlay-color: rgba(24, 39, 51, 0.85);
-    --menu-speed: 0.75s;
-    --easing: cubic-bezier(0.4, 0, 0.2, 1);
-    --dimension: 60px;
+    --color-overlay: rgba(24, 39, 51, 0.85);
+    --velocidad-menu: 0.75s;
+    --animacion: cubic-bezier(0.4, 0, 0.2, 1);
+    --dimension-boton: clamp(3rem, 7vw, 4rem);
+    --tamano-fuente-mediano: 1.25rem;
   }
 
-  .menu-wrap {
+  .contenedor-menu {
     position: fixed;
-    inset: auto 10px 10px auto;
+    inset: auto 1rem 1.5rem auto;
     z-index: 1;
-    width: var(--dimension);
-    height: var(--dimension);
+    width: var(--dimension-boton);
+    height: var(--dimension-boton);
   }
 
-  .menu-wrap .toggler {
+  .contenedor-menu .interruptor-menu {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3; /* Asegurarse de que esté por encima del botón de hamburguesa */
-    width: var(--dimension); /* Mismo tamaño que el botón de hamburguesa */
-    height: var(--dimension);
+    z-index: 3;
+    width: var(--dimension-boton);
+    height: var(--dimension-boton);
     opacity: 0;
     cursor: pointer;
   }
 
-  .menu-wrap .hamburger {
+  .contenedor-menu .boton-hamburguesa {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
-    width: var(--dimension);
-    height: var(--dimension);
-    background: var(--primary-color);
+    width: var(--dimension-boton);
+    height: var(--dimension-boton);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
   }
 
-  .menu-wrap .hamburger > div {
+  .contenedor-menu .boton-hamburguesa > div {
     position: relative;
     flex: none;
     width: 77%;
     height: 2px;
-    background: #fff;
+    background-color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.4s var(--easing);
+    transition: all 0.4s var(--animacion);
   }
 
-  .menu-wrap .hamburger > div::before,
-  .menu-wrap .hamburger > div::after {
+  .contenedor-menu .boton-hamburguesa > div::before,
+  .contenedor-menu .boton-hamburguesa > div::after {
     content: '';
     position: absolute;
     z-index: 1;
-    top: -10px;
+    top: -0.7rem;
     width: 100%;
     height: 2px;
     background: inherit;
   }
 
-  .menu-wrap .hamburger > div::after {
-    top: 10px;
+  .contenedor-menu .boton-hamburguesa > div::after {
+    top: 0.7rem;
   }
 
-  .menu-wrap .toggler:checked + .hamburger > div {
+  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div {
     transform: rotate(135deg);
   }
 
-  .menu-wrap .toggler:checked + .hamburger > div::before,
-  .menu-wrap .toggler:checked + .hamburger > div::after {
+  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div::before,
+  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div::after {
     top: 0;
     transform: rotate(90deg);
   }
 
-  .menu-wrap .toggler:checked:hover + .hamburger > div {
+  .contenedor-menu .interruptor-menu:checked:hover + .boton-hamburguesa > div {
     transform: rotate(225deg);
   }
 
-  .menu-wrap .toggler:checked ~ .menu {
+  .contenedor-menu .interruptor-menu:checked ~ .menu {
     visibility: visible;
   }
 
-  .menu-wrap .toggler:checked ~ .menu > div {
+  .contenedor-menu .interruptor-menu:checked ~ .menu > .contenido-menu {
     transform: scale(1);
-    transition-duration: var(--menu-speed);
+    transition-duration: var(--velocidad-menu);
   }
 
-  .menu-wrap .toggler:checked ~ .menu > div > div {
+  .contenedor-menu
+    .interruptor-menu:checked
+    ~ .menu
+    > .contenido-menu
+    > .lista-menu {
     opacity: 1;
-    transition: opacity 0.4s var(--easing) 0.4s;
+    transition: opacity 0.4s var(--animacion) 0.4s;
   }
 
-  .menu-wrap .menu {
+  .contenedor-menu .menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -144,61 +160,57 @@
     justify-content: center;
   }
 
-  .menu-wrap .menu > div {
-    background: linear-gradient(
-      135deg,
-      var(--overlay-color),
-      rgba(24, 39, 51, 0.95)
-    );
+  .contenedor-menu .menu > .contenido-menu {
+    backdrop-filter: blur(6px);
+    background-color: #00ffff05;
     border-radius: 50%;
-    width: 45vw;
-    height: 45vw;
+    width: 65vw;
+    height: 65vw;
     display: flex;
     flex: none;
     align-items: center;
     justify-content: center;
     transform: scale(0);
-    transition: all var(--menu-speed) var(--easing);
+    transition: all var(--velocidad-menu) var(--animacion);
   }
 
-  .menu-wrap .menu > div > div {
+  .contenedor-menu .menu > .contenido-menu > .lista-menu {
     text-align: center;
     max-width: 90vw;
     max-height: 100vh;
     opacity: 0;
-    transition: opacity 0.4s var(--easing) 0.4s;
+    transition: opacity 0.4s var(--animacion);
   }
 
-  .menu-wrap .menu > div > div > ul > li {
+  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li {
     list-style: none;
-    color: #fff;
-    font-size: 1.5rem;
+    color: var(--text-color);
+    font-size: var(--tamano-fuente-mediano);
     padding: 1rem;
   }
 
-  .menu-wrap .menu > div > div > ul > li > a {
+  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.4s var(--easing);
+    transition: color 0.4s var(--animacion);
   }
 
-  .menu-wrap .menu > div > div > ul > li > a:hover {
+  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a:hover {
     color: var(--primary-color);
   }
 
-  .menu-wrap .menu > div > div > ul > li > a:focus {
+  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 4px;
   }
 
   @media (width <= 768px) {
-    .menu-wrap .menu > div {
+    .contenedor-menu .menu > .contenido-menu {
       width: 150vw;
       height: 150vw;
     }
 
-    .menu-wrap .menu > div > div > ul > li {
-      font-size: 1.2rem;
+    .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li {
       padding: 0.75rem;
     }
   }
@@ -207,26 +219,19 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.querySelector('.toggler') as HTMLInputElement;
-    const menu = document.querySelector('.menu') as HTMLDivElement;
-    const links = document.querySelectorAll(
-      '.menu a'
-    ) as NodeListOf<HTMLAnchorElement>;
 
-    // Cerrar menú al hacer clic fuera
+    // Cerrar menú al hacer clic fuera o seleccionar un enlace
     document.addEventListener('click', (e) => {
-      const target = e.target as Node;
-      if (!menu.contains(target) && !toggler.contains(target)) {
+      const target = e.target as Element;
+
+      // Verificar si el clic fue fuera del menú o en un enlace del menú
+      if (!target?.closest('.menu') && !target.closest('.toggler')) {
+        toggler.checked = false;
+        toggler.setAttribute('aria-expanded', 'false');
+      } else if (target.closest('.menu a')) {
         toggler.checked = false;
         toggler.setAttribute('aria-expanded', 'false');
       }
-    });
-
-    // Cerrar menú al seleccionar un enlace
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        toggler.checked = false;
-        toggler.setAttribute('aria-expanded', 'false');
-      });
     });
 
     // Actualizar aria-expanded cuando el menú se abre/cierra
