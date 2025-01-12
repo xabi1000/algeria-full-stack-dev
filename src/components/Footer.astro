@@ -1,0 +1,130 @@
+---
+import { Icon } from 'astro-icon/components';
+const ICONS = [
+  { icon: 'home' },
+  { icon: 'plus' },
+  { icon: 'dog' },
+  { icon: 'contact' },
+];
+import { links } from '../js/helpers.js';
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3 class="footer-title">Enlaces Rápidos</h3>
+      <ul class="footer-links">
+        {
+          links.map((link, index) => (
+            <li role="menuitem">
+              <a href={link.url}>
+                {' '}
+                <Icon name={`mdi:${ICONS[index].icon}`} />
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3 class="footer-title">Síguenos</h3>
+      <ul class="social-icons">
+        {
+          ICONS.map(({ icon }) => (
+            <li>
+              <a href={`https://${icon}.com`} aria-label="Twitter">
+                <Icon name={`mdi:${icon}`} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3 class="footer-title">Contacto</h3>
+      <ul>
+        <li>
+          <Icon name="mdi:email" /> Email: info@example.com
+        </li>
+        <li><Icon name="mdi:phone" /> Teléfono: +123 456 789</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin-top: auto;
+  }
+
+  .footer * {
+    font-size: clamp(0.5rem, 1vw, 0.9rem);
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    padding: 1vw 1vw 0.3rem;
+  }
+
+  .footer-section {
+    display: grid;
+    gap: 0.7rem;
+    justify-items: center;
+  }
+
+  .footer-title {
+    margin: 0;
+    color: #f8f8f8;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-links li {
+  }
+
+  .footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #fff;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    color: #ccc;
+    /* font-size: 1.5rem; */
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: auto;
+
+    border-top: 1px solid #444;
+    /* font-size: 0.875rem; */
+    color: #ccc;
+  }
+</style>
