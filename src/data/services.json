@@ -1,0 +1,49 @@
+{
+  "services": [
+    {
+      "title": "Diseño y Desarrollo Web",
+      "description": "Creamos sitios web modernos, rápidos y adaptados a tus necesidades.",
+      "icon": "🌐"
+    },
+    {
+      "title": "Aplicaciones Móviles",
+      "description": "Desarrollamos aplicaciones nativas e híbridas para iOS y Android.",
+      "icon": "📱"
+    },
+    {
+      "title": "SEO y Marketing Digital",
+      "description": "Mejoramos tu visibilidad en línea con estrategias de SEO y publicidad.",
+      "icon": "📈"
+    },
+    {
+      "title": "Optimización y Mantenimiento",
+      "description": "Optimizamos y mantenemos tu sitio web para garantizar su máximo rendimiento.",
+      "icon": "⚙️"
+    },
+    {
+      "title": "Diseño de Experiencia de Usuario (UX)",
+      "description": "Creamos interfaces intuitivas y atractivas para mejorar la experiencia del usuario.",
+      "icon": "🎨"
+    },
+    {
+      "title": "Integración de APIs",
+      "description": "Conectamos tus aplicaciones con servicios de terceros para ampliar su funcionalidad.",
+      "icon": "🔗"
+    },
+    {
+      "title": "Consultoría Tecnológica",
+      "description": "Te asesoramos en la elección de tecnologías y la planificación de arquitecturas de software.",
+      "icon": "💡"
+    },
+    {
+      "title": "Seguridad Informática",
+      "description": "Protegemos tus sistemas y datos con medidas de seguridad avanzadas.",
+      "icon": "🔒"
+    },
+    {
+      "title": "Analítica y Reportes",
+      "description": "Configuramos herramientas de análisis y generamos reportes para medir el rendimiento.",
+      "icon": "📊"
+    }
+  ]
+}
