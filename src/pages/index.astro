@@ -1,25 +1,18 @@
 ---
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
-import NavBar from '../components/NavBar.astro';
-import VideoBg from '../components/VideoBg.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to Algeria full stack .Dev">
-  <VideoBg />
-  <div class="container">
-    <NavBar />
-    <main>
-      <Hero />
-    </main>
-  </div>
+  <main>
+    <Hero />
+  </main>
 </Layout>
 
 <style>
   .container {
     display: grid;
-    min-height: 100vh;
-    min-height: 100dh;
+    min-height: 100dvh;
   }
 </style>
