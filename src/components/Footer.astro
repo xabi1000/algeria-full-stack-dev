@@ -1,12 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components';
-const ICONS = [
-  { icon: 'home' },
-  { icon: 'plus' },
-  { icon: 'dog' },
-  { icon: 'contact' },
-];
-import { links } from '../js/helpers.js';
+import { LINKS, SOCIAL_MEDIA } from '../data/nav.json';
+import Icon from './Icon.astro';
 ---
 
 <footer class="footer">
@@ -15,12 +9,11 @@ import { links } from '../js/helpers.js';
       <h3 class="footer-title">Enlaces Rápidos</h3>
       <ul class="footer-links">
         {
-          links.map((link, index) => (
+          LINKS.map((link, index) => (
             <li role="menuitem">
               <a href={link.url}>
-                {' '}
-                <Icon name={`mdi:${ICONS[index].icon}`} />
-                {link.text}
+                <Icon name={link.icon} />
+                {link.name}
               </a>
             </li>
           ))
@@ -32,10 +25,10 @@ import { links } from '../js/helpers.js';
       <h3 class="footer-title">Síguenos</h3>
       <ul class="social-icons">
         {
-          ICONS.map(({ icon }) => (
+          SOCIAL_MEDIA.map(({ name, icon, url }) => (
             <li>
-              <a href={`https://${icon}.com`} aria-label="Twitter">
-                <Icon name={`mdi:${icon}`} />
+              <a href={url} aria-label={name}>
+                <span>{name}:</span> <Icon name={icon} />
               </a>
             </li>
           ))
@@ -47,9 +40,9 @@ import { links } from '../js/helpers.js';
       <h3 class="footer-title">Contacto</h3>
       <ul>
         <li>
-          <Icon name="mdi:email" /> Email: info@example.com
+          <Icon name="email" /> Email: info@example.com
         </li>
-        <li><Icon name="mdi:phone" /> Teléfono: +123 456 789</li>
+        <li><Icon name="phone" /> Teléfono: +123 456 789</li>
       </ul>
     </div>
   </div>
@@ -75,7 +68,7 @@ import { links } from '../js/helpers.js';
 
   .footer-section {
     display: grid;
-    gap: 0.7rem;
+    gap: var(--gap);
     justify-items: center;
   }
 
@@ -106,7 +99,7 @@ import { links } from '../js/helpers.js';
 
   .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: var(--gap);
   }
 
   .social-icons a {
