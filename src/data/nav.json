@@ -1,0 +1,35 @@
+{
+  "LINKS": [
+    { "name": "Home", "url": "/", "icon": "home" },
+    {
+      "name": "Services",
+      "url": "/services",
+      "icon": "services"
+    },
+    { "name": "Portfolio", "url": "/portfolio", "icon": "portfolio" },
+    { "name": "Contact", "url": "/contact", "icon": "contact" }
+  ],
+
+  "SOCIAL_MEDIA": [
+    {
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com"
+    },
+    {
+      "name": "Facebook",
+      "icon": "facebook",
+      "url": "https://facebook.com"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "url": "https://instagram.com"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://linkedin.com"
+    }
+  ]
+}
