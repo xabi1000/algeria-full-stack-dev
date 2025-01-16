@@ -1,0 +1,10 @@
+---
+// Icon.astro
+const { name } = Astro.props;
+
+// Importar el SVG como texto plano usando ?raw
+const iconPath = `../assets/icons/${name}.svg?raw`;
+const iconContent = await import(iconPath).then((module) => module.default);
+---
+
+<Fragment set:html={iconContent} />
