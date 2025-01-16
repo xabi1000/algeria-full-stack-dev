@@ -1,0 +1,90 @@
+---
+// Testimonials.astro
+
+// Datos de los testimonios (puedes mover esto a un archivo JSON si lo prefieres)
+const testimonials = [
+  {
+    name: 'Juan Pérez',
+    role: 'CEO, Empresa XYZ',
+    comment:
+      '¡Increíble servicio! El equipo fue muy profesional y entregó resultados más allá de nuestras expectativas.',
+    image: '/assets/images/person1.jpg',
+  },
+  {
+    name: 'María Gómez',
+    role: 'Diseñadora UX',
+    comment:
+      'Trabajar con ellos fue una experiencia maravillosa. Siempre están dispuestos a escuchar y mejorar.',
+    image: '/assets/images/person2.jpg',
+  },
+  {
+    name: 'Carlos López',
+    role: 'Desarrollador Full-Stack',
+    comment:
+      'Recomiendo este equipo a cualquiera que busque soluciones innovadoras y de alta calidad.',
+    image: '/assets/images/person3.jpg',
+  },
+];
+---
+
+<div class="testimonials-container">
+  {
+    testimonials.map((testimonial) => (
+      <div class="testimonial-card">
+        <img
+          src={testimonial.image}
+          alt={`Foto de ${testimonial.name}`}
+          class="testimonial-image"
+        />
+        <h3 class="testimonial-name">{testimonial.name}</h3>
+        <p class="testimonial-role">{testimonial.role}</p>
+        <p class="testimonial-comment">"{testimonial.comment}"</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .testimonials-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  .testimonial-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.25rem 0;
+  }
+
+  .testimonial-comment {
+    font-size: 1rem;
+    color: #333;
+    font-style: italic;
+  }
+</style>
