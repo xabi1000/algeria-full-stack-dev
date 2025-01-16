@@ -1,13 +1,6 @@
 ---
-import { links } from '../js/helpers.js';
-import { Icon } from 'astro-icon/components';
-
-const ICONS = [
-  { icon: 'twitter' },
-  { icon: 'facebook' },
-  { icon: 'instagram' },
-  { icon: 'linkedin' },
-];
+import { LINKS, ICONS } from '../data/nav.json';
+import Icon from './Icon.astro';
 ---
 
 <div class="contenedor-menu">
@@ -31,12 +24,11 @@ const ICONS = [
       <div class="lista-menu">
         <ul role="menu">
           {
-            links.map((link, index) => (
+            LINKS.map((link, index) => (
               <li role="menuitem">
                 <a href={link.url}>
-                  {' '}
-                  {link.text}
-                  <Icon name={`mdi:${ICONS[index].icon}`} />
+                  {link.name}
+                  <Icon name={link.icon} />
                 </a>
               </li>
             ))
@@ -86,6 +78,8 @@ const ICONS = [
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    backdrop-filter: blur(15px);
+    background-color: #2502287d;
   }
 
   .contenedor-menu .boton-hamburguesa > div {
@@ -176,8 +170,8 @@ const ICONS = [
 
   .contenedor-menu .menu > .contenido-menu > .lista-menu {
     text-align: center;
-    max-width: 90vw;
-    max-height: 100vh;
+    max-width: 90dvw;
+    max-height: 100dvh;
     opacity: 0;
     transition: opacity 0.4s var(--animacion);
   }
