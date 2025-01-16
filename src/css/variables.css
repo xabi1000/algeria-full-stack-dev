@@ -1,28 +1,26 @@
 /* Variables de colores para el modo claro */
 :root {
+  --title-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  --text-family: 'Lato', system-ui, -apple-system, sans-serif;
+
   --background-color: #ffffff;
   --text-color: #2d3748;
   --primary-color: #007bff;
   --secondary-color: #4a5568;
   --accent-color: #ff6b35;
 
-  --font-size-small: clamp(14px, 2.5vw, 18px);
-  --font-size-medium: clamp(18px, 4vw, 24px);
-  --font-size-large: clamp(24px, 6vw, 36px);
-  --font-size-xlarge: clamp(36px, 8vw, 48px);
+  --font-small: clamp(14px, 2.5vw, 18px);
+  --font-medium: clamp(18px, 4vw, 24px);
+  --font-large: clamp(24px, 6vw, 36px);
+  --font-xlarge: clamp(36px, 8vw, 48px);
 
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 2rem;
-
-  --title-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  --text-family: 'Lato', system-ui, -apple-system, sans-serif;
+  --gap: clamp(1em, 2.5vw, 1.5em);
 }
 
 /* Variables de colores para el modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #1a202c;
+    --background-color: #080108;
     --text-color: #e2e8f0;
     --primary-color: #63b3ed;
     --secondary-color: #718096;
