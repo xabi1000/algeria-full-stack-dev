@@ -1,5 +1,5 @@
 ---
-import { LINKS, ICONS } from '../data/nav.json';
+import { LINKS } from '../data/nav.json';
 import Icon from './Icon.astro';
 ---
 
@@ -27,7 +27,7 @@ import Icon from './Icon.astro';
             LINKS.map((link, index) => (
               <li role="menuitem">
                 <a href={link.url}>
-                  {link.name}
+                  <span>{link.name}</span>
                   <Icon name={link.icon} />
                 </a>
               </li>
@@ -187,6 +187,9 @@ import Icon from './Icon.astro';
     color: inherit;
     text-decoration: none;
     transition: color 0.4s var(--animacion);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a:hover {
