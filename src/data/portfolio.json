@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "E-commerce Moderno",
+    "description": "Plataforma de e-commerce desarrollada con React y Node.js.",
+    "image": "/portfolio/e-commerce.webp",
+    "link": "#",
+    "category": "e-commerce",
+    "technologies": ["React", "Node.js", "Tailwind CSS"],
+    "testimonial": "¡Increíble trabajo! La plataforma superó nuestras expectativas."
+  },
+  {
+    "id": 2,
+    "title": "Landing Page para Startup",
+    "description": "Diseño y desarrollo de una landing page moderna con Astro y Svelte.",
+    "image": "/portfolio/landing-page.webp",
+    "link": "#",
+    "category": "landing-pages",
+    "technologies": ["Astro", "Svelte", "Figma"],
+    "testimonial": "El equipo fue muy profesional y entregó el proyecto a tiempo."
+  },
+  {
+    "id": 3,
+    "title": "Aplicación de Gestión de Tareas",
+    "description": "Aplicación web para gestión de tareas desarrollada con Vue.js y Firebase.",
+    "image": "/portfolio/task-manager.webp",
+    "link": "#",
+    "category": "web-apps",
+    "technologies": ["Vue.js", "Firebase", "SCSS"],
+    "testimonial": "La aplicación ha mejorado nuestra productividad enormemente."
+  },
+  {
+    "id": 4,
+    "title": "Sitio Web Corporativo",
+    "description": "Diseño y desarrollo de un sitio web corporativo con WordPress y Elementor.",
+    "image": "/portfolio/corporative-web.webp",
+    "link": "#",
+    "category": "corporate-websites",
+    "technologies": ["WordPress", "Elementor", "PHP"],
+    "testimonial": "El sitio web refleja perfectamente nuestra marca."
+  },
+  {
+    "id": 5,
+    "title": "Plataforma de Cursos Online",
+    "description": "Desarrollo de una plataforma de cursos online con Laravel y MySQL.",
+    "image": "/portfolio/education-landing.webp",
+    "link": "#",
+    "category": "web-apps",
+    "technologies": ["Laravel", "MySQL", "Bootstrap"],
+    "testimonial": "La plataforma es fácil de usar y muy funcional."
+  },
+  {
+    "id": 6,
+    "title": "Blog de Tecnología",
+    "description": "Creación de un blog moderno con Astro y Markdown.",
+    "image": "/portfolio/blog-tecnology.webp",
+    "link": "#",
+    "category": "blogs",
+    "technologies": ["Astro", "Markdown", "Tailwind CSS"],
+    "testimonial": "El blog tiene un diseño increíble y es muy rápido."
+  },
+  {
+    "id": 7,
+    "title": "Aplicación de Reservas",
+    "description": "Aplicación web para reservas de restaurantes desarrollada con React y MongoDB.",
+    "image": "/portfolio/reservations.webp",
+    "link": "#",
+    "category": "web-apps",
+    "technologies": ["React", "MongoDB", "Express"],
+    "testimonial": "La aplicación ha simplificado nuestro proceso de reservas."
+  },
+  {
+    "id": 8,
+    "title": "Tienda Online de Ropa",
+    "description": "Desarrollo de una tienda online de ropa con Shopify y Liquid.",
+    "image": "/portfolio/tienda-ropa.webp",
+    "link": "#",
+    "category": "e-commerce",
+    "technologies": ["Shopify", "Liquid", "JavaScript"],
+    "testimonial": "La tienda es muy intuitiva y las ventas han aumentado."
+  },
+  {
+    "id": 9,
+    "title": "Portfolio Personal",
+    "description": "Diseño y desarrollo de un portfolio personal con Svelte y SCSS.",
+    "image": "/portfolio/personal-portfolio.webp",
+    "link": "#",
+    "category": "portfolios",
+    "technologies": ["Svelte", "SCSS", "Vite"],
+    "testimonial": "El portfolio es moderno y refleja mi trabajo de manera profesional."
+  },
+  {
+    "id": 10,
+    "title": "Sistema de Gestión de Inventarios",
+    "description": "Desarrollo de un sistema de gestión de inventarios con Django y PostgreSQL.",
+    "image": "/portfolio/sistema-inventarios.webp",
+    "link": "#",
+    "category": "web-apps",
+    "technologies": ["Django", "PostgreSQL", "Bootstrap"],
+    "testimonial": "El sistema ha optimizado nuestro control de inventarios."
+  },
+  {
+    "id": 11,
+    "title": "Landing Page para Agencia de Marketing",
+    "description": "Diseño y desarrollo de una landing page para una agencia de marketing con HTML, CSS y JavaScript.",
+    "image": "/portfolio/landing-markiting-agency.webp",
+    "link": "#",
+    "category": "landing-pages",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "testimonial": "La landing page ha aumentado nuestras conversiones un 30%."
+  }
+]
