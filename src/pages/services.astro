@@ -1,19 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { services } from '../data/services.json';
-import Footer from '../components/Footer.astro';
-
-interface Service {
-  title: string;
-  description: string;
-  icon: string;
-}
 ---
 
 <Layout title="Services">
   <section class="services-list">
     {
-      services.map((service: Service) => (
+      services.map((service) => (
         <article class="service-card">
           <div class="icon">{service.icon}</div>
           <h2>{service.title}</h2>
@@ -22,7 +15,6 @@ interface Service {
       ))
     }
   </section>
-  <Footer />
 </Layout>
 
 <style>
