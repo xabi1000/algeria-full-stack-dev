@@ -1,22 +1,76 @@
 ---
+import ProjectCard from '../components/ProjectCard.astro';
+import projects from '../data/portfolio.json';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Portfolio">
-  <main class="portfolio">
-    <header>
-      <h1>PORTFOLIO</h1>
-      <p>Conoce algunos de los proyectos en los que he trabajado.</p>
-    </header>
+<Layout title="Portafolio Algeria Full-Stack .Dev">
+  <section class="hero">
+    <h1>Nuestro Trabajo Habla por Nosotros</h1>
+    <p>
+      Explora algunos de los proyectos que hemos desarrollado para nuestros
+      clientes.
+    </p>
+  </section>
 
-    <section class="portfolio-section">
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="/img/portfolio-1.jpg" alt="Proyecto 1" />
-          <h2>Proyecto 1</h2>
-          <p>Descripción del Proyecto 1</p>
-        </div>
-      </div>
-    </section>
-  </main></Layout
->
+  <section class="projects-grid">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </section>
+
+  <section class="testimonials">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonial-list">
+      {
+        projects.map(
+          (project) =>
+            project.testimonial && (
+              <div class="testimonial">
+                <p>"{project.testimonial}"</p>
+                <span>- Cliente de {project.title}</span>
+              </div>
+            )
+        )
+      }
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>¿Tienes un proyecto en mente?</h2>
+    <a href="/contact" class="cta-button">¡Contáctanos!</a>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .testimonials {
+    text-align: center;
+    padding: 2rem;
+    /* background-color: #f1f1f1; */
+  }
+  .testimonial {
+    margin: 1rem 0;
+  }
+  .cta {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0070f3;
+    color: white;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #0070f3;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+</style>
