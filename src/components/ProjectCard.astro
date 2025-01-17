@@ -18,8 +18,9 @@ const { title, description, image, link } = Astro.props;
     text-align: center;
   }
   .project-image {
-    max-width: 100%;
-    border-radius: 8px;
+    border-radius: 7px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
   }
   .project-link {
     display: inline-block;
