@@ -1,0 +1,30 @@
+---
+// src/components/ProjectCard.astro
+const { title, description, image, link } = Astro.props;
+---
+
+<div class="project-card">
+  <img src={image} alt={title} class="project-image" />
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link} class="project-link">Ver más</a>
+</div>
+
+<style>
+  .project-card {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .project-image {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0070f3;
+    text-decoration: none;
+  }
+</style>
