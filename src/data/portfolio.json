@@ -7,7 +7,8 @@
     "link": "#",
     "category": "e-commerce",
     "technologies": ["React", "Node.js", "Tailwind CSS"],
-    "testimonial": "¡Increíble trabajo! La plataforma superó nuestras expectativas."
+    "testimonial": "¡Increíble trabajo! La plataforma superó nuestras expectativas.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "link": "#",
     "category": "landing-pages",
     "technologies": ["Astro", "Svelte", "Figma"],
-    "testimonial": "El equipo fue muy profesional y entregó el proyecto a tiempo."
+    "testimonial": "El equipo fue muy profesional y entregó el proyecto a tiempo.",
+    "stars": "⭐⭐⭐⭐"
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "link": "#",
     "category": "web-apps",
     "technologies": ["Vue.js", "Firebase", "SCSS"],
-    "testimonial": "La aplicación ha mejorado nuestra productividad enormemente."
+    "testimonial": "La aplicación ha mejorado nuestra productividad enormemente.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "link": "#",
     "category": "corporate-websites",
     "technologies": ["WordPress", "Elementor", "PHP"],
-    "testimonial": "El sitio web refleja perfectamente nuestra marca."
+    "testimonial": "El sitio web refleja perfectamente nuestra marca.",
+    "stars": "⭐⭐⭐⭐"
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "link": "#",
     "category": "web-apps",
     "technologies": ["Laravel", "MySQL", "Bootstrap"],
-    "testimonial": "La plataforma es fácil de usar y muy funcional."
+    "testimonial": "La plataforma es fácil de usar y muy funcional.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "link": "#",
     "category": "blogs",
     "technologies": ["Astro", "Markdown", "Tailwind CSS"],
-    "testimonial": "El blog tiene un diseño increíble y es muy rápido."
+    "testimonial": "El blog tiene un diseño increíble y es muy rápido.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "link": "#",
     "category": "web-apps",
     "technologies": ["React", "MongoDB", "Express"],
-    "testimonial": "La aplicación ha simplificado nuestro proceso de reservas."
+    "testimonial": "La aplicación ha simplificado nuestro proceso de reservas.",
+    "stars": "⭐⭐⭐⭐"
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "link": "#",
     "category": "e-commerce",
     "technologies": ["Shopify", "Liquid", "JavaScript"],
-    "testimonial": "La tienda es muy intuitiva y las ventas han aumentado."
+    "testimonial": "La tienda es muy intuitiva y las ventas han aumentado.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "link": "#",
     "category": "portfolios",
     "technologies": ["Svelte", "SCSS", "Vite"],
-    "testimonial": "El portfolio es moderno y refleja mi trabajo de manera profesional."
+    "testimonial": "El portfolio es moderno y refleja mi trabajo de manera profesional.",
+    "stars": "⭐⭐⭐⭐⭐"
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "link": "#",
     "category": "web-apps",
     "technologies": ["Django", "PostgreSQL", "Bootstrap"],
-    "testimonial": "El sistema ha optimizado nuestro control de inventarios."
+    "testimonial": "El sistema ha optimizado nuestro control de inventarios.",
+    "stars": "⭐⭐⭐⭐"
   },
   {
     "id": 11,
@@ -107,6 +117,7 @@
     "link": "#",
     "category": "landing-pages",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "testimonial": "La landing page ha aumentado nuestras conversiones un 30%."
+    "testimonial": "La landing page ha aumentado nuestras conversiones un 30%.",
+    "stars": "⭐⭐⭐⭐"
   }
 ]
