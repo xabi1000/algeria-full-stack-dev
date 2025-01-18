@@ -1,10 +1,19 @@
 ---
-// Icon.astro
+// src/components/Icon.astro
 const { name } = Astro.props;
 
-// Importar el SVG como texto plano usando ?raw
-const iconPath = `../assets/icons/${name}.svg?raw`;
-const iconContent = await import(iconPath).then((module) => module.default);
+// Importar todos los SVG de la carpeta assets/icons
+const icons = import.meta.glob('../assets/icons/*.svg', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+// Obtener la ruta del icono
+const iconPath = `../assets/icons/${name}.svg`;
+
+// Obtener el contenido del icono
+const iconContent = icons[iconPath];
 ---
 
-<Fragment set:html={iconContent} />
+{iconContent && <Fragment set:html={iconContent} />}
