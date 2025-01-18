@@ -5,33 +5,16 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Portafolio Algeria Full-Stack .Dev">
-  <section class="hero">
+  <header class="hero">
     <h1>Nuestro Trabajo Habla por Nosotros</h1>
     <p>
       Explora algunos de los proyectos que hemos desarrollado para nuestros
       clientes.
     </p>
-  </section>
+  </header>
 
   <section class="projects-grid">
     {projects.map((project) => <ProjectCard {...project} />)}
-  </section>
-
-  <section class="testimonials">
-    <h2>Lo que dicen nuestros clientes</h2>
-    <div class="testimonial-list">
-      {
-        projects.map(
-          (project) =>
-            project.testimonial && (
-              <div class="testimonial">
-                <p>"{project.testimonial}"</p>
-                <span>- Cliente de {project.title}</span>
-              </div>
-            )
-        )
-      }
-    </div>
   </section>
 
   <section class="cta">
@@ -45,23 +28,23 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     padding: 4rem 1rem;
   }
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    gap: var(--gap);
+    padding: var(--gap);
   }
   .testimonials {
     text-align: center;
-    padding: 2rem;
-    /* background-color: #f1f1f1; */
+    padding: var(--gap);
   }
   .testimonial {
     margin: 1rem 0;
   }
   .cta {
     text-align: center;
-    padding: 2rem;
+    padding: var(--gap);
     background-color: #0070f3;
     color: white;
   }
