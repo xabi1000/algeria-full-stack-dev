@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Portafolio Algeria Full-Stack .Dev">
-  <header class="hero">
+  <header class="projects-hero">
     <h1>Nuestro Trabajo Habla por Nosotros</h1>
     <p>
       Explora algunos de los proyectos que hemos desarrollado para nuestros
@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .hero {
+  .projects-hero {
     text-align: center;
     padding: 4rem 1rem;
   }
@@ -32,28 +32,25 @@ import Layout from '../layouts/Layout.astro';
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+
     gap: var(--gap);
     padding: var(--gap);
   }
-  .testimonials {
-    text-align: center;
-    padding: var(--gap);
-  }
-  .testimonial {
-    margin: 1rem 0;
-  }
+
   .cta {
     text-align: center;
     padding: var(--gap);
     background-color: #0070f3;
     color: white;
-  }
-  .cta-button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: white;
-    color: #0070f3;
-    text-decoration: none;
-    border-radius: 4px;
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      color: #0070f3;
+      text-decoration: none;
+      border-radius: 4px;
+    }
   }
 </style>
