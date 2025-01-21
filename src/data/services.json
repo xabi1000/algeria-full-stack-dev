@@ -2,48 +2,154 @@
   "services": [
     {
       "title": "Diseño y Desarrollo Web",
+      "slug": "diseno-y-desarrollo-web",
       "description": "Creamos sitios web modernos, rápidos y adaptados a tus necesidades.",
-      "icon": "🌐"
+      "icon": "&#x1f578;",
+      "details": {
+        "overview": "Ofrecemos soluciones web personalizadas, desde sitios informativos hasta plataformas complejas.",
+        "features": [
+          "Diseño responsive y adaptado a dispositivos móviles.",
+          "Optimización para motores de búsqueda (SEO).",
+          "Integración con sistemas de gestión de contenido (CMS)."
+        ],
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "Astro",
+          "Node.js"
+        ],
+        "objective": "Si tu objetivo es tener un sitio web moderno, rápido y adaptado a tus necesidades, nosotros te ayudamos a crearlo desde cero o a mejorar tu sitio actual."
+      }
     },
     {
       "title": "Aplicaciones Móviles",
+      "slug": "aplicaciones-moviles",
       "description": "Desarrollamos aplicaciones nativas e híbridas para iOS y Android.",
-      "icon": "📱"
+      "icon": "📱",
+      "details": {
+        "overview": "Creamos aplicaciones móviles que ofrecen una experiencia de usuario excepcional.",
+        "features": [
+          "Desarrollo nativo para iOS (Swift) y Android (Kotlin).",
+          "Aplicaciones híbridas con React Native.",
+          "Integración con APIs y servicios en la nube."
+        ],
+        "technologies": ["Swift", "Kotlin", "React Native", "Firebase"],
+        "objective": "Si tu objetivo es crear una aplicación móvil para iOS, Android o ambas, nosotros te ayudamos a diseñar, desarrollar y lanzar tu app con la mejor calidad y funcionalidad."
+      }
     },
     {
       "title": "SEO y Marketing Digital",
+      "slug": "seo-y-marketing-digital",
       "description": "Mejoramos tu visibilidad en línea con estrategias de SEO y publicidad.",
-      "icon": "📈"
+      "icon": "📈",
+      "details": {
+        "overview": "Maximizamos tu presencia en línea con estrategias de SEO y campañas de marketing digital.",
+        "features": [
+          "Optimización técnica y de contenido para SEO.",
+          "Campañas de publicidad en Google Ads y redes sociales.",
+          "Análisis de métricas y reportes de rendimiento."
+        ],
+        "technologies": ["Google Analytics", "Google Ads", "SEMrush", "Ahrefs"],
+        "objective": "Si tu objetivo es aumentar tu visibilidad en línea y atraer más clientes, nosotros te ayudamos con estrategias de SEO y marketing digital personalizadas."
+      }
     },
     {
       "title": "Optimización y Mantenimiento",
+      "slug": "optimizacion-y-mantenimiento",
       "description": "Optimizamos y mantenemos tu sitio web para garantizar su máximo rendimiento.",
-      "icon": "⚙️"
+      "icon": "⚙️",
+      "details": {
+        "overview": "Ofrecemos servicios de optimización y mantenimiento para garantizar que tu sitio web funcione sin problemas.",
+        "features": [
+          "Optimización de velocidad y rendimiento.",
+          "Actualizaciones de seguridad y parches.",
+          "Soporte técnico continuo."
+        ],
+        "technologies": ["Lighthouse", "Webpack", "Docker", "Git"],
+        "objective": "Si tu objetivo es mantener tu sitio web rápido, seguro y actualizado, nosotros te ayudamos con servicios de optimización y mantenimiento continuo."
+      }
     },
     {
       "title": "Diseño de Experiencia de Usuario (UX)",
+      "slug": "diseno-de-experiencia-de-usuario-ux",
       "description": "Creamos interfaces intuitivas y atractivas para mejorar la experiencia del usuario.",
-      "icon": "🎨"
+      "icon": "🎨",
+      "details": {
+        "overview": "Diseñamos interfaces centradas en el usuario para maximizar la usabilidad y la satisfacción.",
+        "features": [
+          "Investigación de usuarios y creación de personas.",
+          "Prototipado y pruebas de usabilidad.",
+          "Diseño de interfaces modernas y accesibles."
+        ],
+        "technologies": ["Figma", "Sketch", "Adobe XD", "InVision"],
+        "objective": "Si tu objetivo es mejorar la experiencia de tus usuarios con interfaces intuitivas y atractivas, nosotros te ayudamos a diseñar soluciones centradas en el usuario."
+      }
     },
     {
       "title": "Integración de APIs",
+      "slug": "integracion-de-apis",
       "description": "Conectamos tus aplicaciones con servicios de terceros para ampliar su funcionalidad.",
-      "icon": "🔗"
+      "icon": "🔗",
+      "details": {
+        "overview": "Integramos APIs de terceros para ampliar las capacidades de tus aplicaciones.",
+        "features": [
+          "Integración con servicios de pago (Stripe, PayPal).",
+          "Conexión con redes sociales (Facebook, Twitter, Instagram).",
+          "Automatización de procesos con APIs personalizadas."
+        ],
+        "technologies": ["REST", "GraphQL", "Postman", "OAuth"],
+        "objective": "Si tu objetivo es conectar tu aplicación con servicios de terceros para ampliar su funcionalidad, nosotros te ayudamos con la integración de APIs de manera eficiente y segura."
+      }
     },
     {
       "title": "Consultoría Tecnológica",
+      "slug": "consultoria-tecnologica",
       "description": "Te asesoramos en la elección de tecnologías y la planificación de arquitecturas de software.",
-      "icon": "💡"
+      "icon": "💡",
+      "details": {
+        "overview": "Ofrecemos asesoramiento experto para ayudarte a tomar decisiones tecnológicas informadas.",
+        "features": [
+          "Evaluación de tecnologías y frameworks.",
+          "Planificación de arquitecturas escalables.",
+          "Migración y modernización de sistemas."
+        ],
+        "technologies": ["Microservicios", "AWS", "Azure", "Kubernetes"],
+        "objective": "Si tu objetivo es elegir las mejores tecnologías y arquitecturas para tu proyecto, nosotros te asesoramos con soluciones personalizadas y escalables."
+      }
     },
     {
       "title": "Seguridad Informática",
+      "slug": "seguridad-informatica",
       "description": "Protegemos tus sistemas y datos con medidas de seguridad avanzadas.",
-      "icon": "🔒"
+      "icon": "🔒",
+      "details": {
+        "overview": "Implementamos medidas de seguridad para proteger tus sistemas y datos contra amenazas.",
+        "features": [
+          "Auditorías de seguridad y pruebas de penetración.",
+          "Configuración de firewalls y sistemas de detección de intrusiones.",
+          "Cifrado de datos y backups seguros."
+        ],
+        "technologies": ["SSL/TLS", "OWASP", "Penetration Testing", "VPN"],
+        "objective": "Si tu objetivo es proteger tus sistemas y datos contra amenazas cibernéticas, nosotros te ayudamos con medidas de seguridad avanzadas y auditorías completas."
+      }
     },
     {
       "title": "Analítica y Reportes",
+      "slug": "analitica-y-reportes",
       "description": "Configuramos herramientas de análisis y generamos reportes para medir el rendimiento.",
-      "icon": "📊"
+      "icon": "📊",
+      "details": {
+        "overview": "Proporcionamos análisis detallados y reportes personalizados para medir el rendimiento de tus aplicaciones.",
+        "features": [
+          "Configuración de Google Analytics y herramientas similares.",
+          "Generación de reportes personalizados.",
+          "Análisis de datos y recomendaciones estratégicas."
+        ],
+        "technologies": ["Google Analytics", "Tableau", "Power BI", "BigQuery"],
+        "objective": "Si tu objetivo es medir y mejorar el rendimiento de tus aplicaciones, nosotros te ayudamos con herramientas de análisis y reportes personalizados."
+      }
     }
   ]
 }
