@@ -8,9 +8,11 @@ import { services } from '../data/services.json';
     {
       services.map((service) => (
         <article class="service-card">
-          <div class="icon">{service.icon}</div>
-          <h2>{service.title}</h2>
-          <p>{service.description}</p>
+          <a href={`/services/${service.slug}`}>
+            <div class="icon" set:html={service.icon} />
+            <h2>{service.title}</h2>
+            <p>{service.description}</p>
+          </a>
         </article>
       ))
     }
