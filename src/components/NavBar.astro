@@ -3,6 +3,39 @@ import { LINKS } from '../data/nav.json';
 import Icon from './Icon.astro';
 ---
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggler = document.querySelector('.toggler') as HTMLInputElement;
+
+    const hamburguer = document.querySelector(
+      '.interruptor-menu'
+    ) as HTMLElement;
+
+    if (innerWidth >= 768) {
+      hamburguer.checked = true;
+    }
+
+    // Cerrar menú al hacer clic fuera o seleccionar un enlace
+    document.addEventListener('click', (e) => {
+      const target = e.target as Element;
+
+      // Verificar si el clic fue fuera del menú o en un enlace del menú
+      if (!target?.closest('.menu') && !target.closest('.toggler')) {
+        toggler.checked = false;
+        toggler.setAttribute('aria-expanded', 'false');
+      } else if (target.closest('.menu a')) {
+        toggler.checked = false;
+        toggler.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Actualizar aria-expanded cuando el menú se abre/cierra
+    toggler.addEventListener('change', () => {
+      toggler.setAttribute('aria-expanded', String(toggler.checked));
+    });
+  });
+</script>
+
 <div class="contenedor-menu">
   <!-- Input para controlar el estado del menú -->
   <input
@@ -15,20 +48,20 @@ import Icon from './Icon.astro';
 
   <!-- Botón de hamburguesa -->
   <label for="interruptor-menu" class="boton-hamburguesa" aria-hidden="true">
-    <div></div>
+    <div class="linea-hamburguesa"></div>
   </label>
 
   <!-- Menú de navegación -->
   <div class="menu" role="navigation">
     <div class="contenido-menu">
       <div class="lista-menu">
-        <ul role="menu">
+        <ul class="lista-enlaces" role="menu">
           {
             LINKS.map((link, index) => (
-              <li role="menuitem">
-                <a href={link.url}>
+              <li class="item-menu" role="menuitem">
+                <a href={link.url} class="enlace-menu">
                   <span>{link.name}</span>
-                  <Icon name={link.icon} />
+                  <Icon name={link.icon} class="icono-menu" />
                 </a>
               </li>
             ))
@@ -56,7 +89,7 @@ import Icon from './Icon.astro';
     height: var(--dimension-boton);
   }
 
-  .contenedor-menu .interruptor-menu {
+  .interruptor-menu {
     position: absolute;
     top: 0;
     left: 0;
@@ -67,7 +100,7 @@ import Icon from './Icon.astro';
     cursor: pointer;
   }
 
-  .contenedor-menu .boton-hamburguesa {
+  .boton-hamburguesa {
     position: absolute;
     top: 0;
     left: 0;
@@ -82,7 +115,7 @@ import Icon from './Icon.astro';
     background-color: #0106066b;
   }
 
-  .contenedor-menu .boton-hamburguesa > div {
+  .linea-hamburguesa {
     position: relative;
     flex: none;
     width: 77%;
@@ -94,8 +127,8 @@ import Icon from './Icon.astro';
     transition: all 0.4s var(--animacion);
   }
 
-  .contenedor-menu .boton-hamburguesa > div::before,
-  .contenedor-menu .boton-hamburguesa > div::after {
+  .linea-hamburguesa::before,
+  .linea-hamburguesa::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -105,43 +138,39 @@ import Icon from './Icon.astro';
     background: inherit;
   }
 
-  .contenedor-menu .boton-hamburguesa > div::after {
+  .linea-hamburguesa::after {
     top: 0.7rem;
   }
 
-  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div {
+  .interruptor-menu:checked + .boton-hamburguesa .linea-hamburguesa {
     transform: rotate(135deg);
   }
 
-  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div::before,
-  .contenedor-menu .interruptor-menu:checked + .boton-hamburguesa > div::after {
+  .interruptor-menu:checked + .boton-hamburguesa .linea-hamburguesa::before,
+  .interruptor-menu:checked + .boton-hamburguesa .linea-hamburguesa::after {
     top: 0;
     transform: rotate(90deg);
   }
 
-  .contenedor-menu .interruptor-menu:checked:hover + .boton-hamburguesa > div {
+  .interruptor-menu:checked:hover + .boton-hamburguesa .linea-hamburguesa {
     transform: rotate(225deg);
   }
 
-  .contenedor-menu .interruptor-menu:checked ~ .menu {
+  .interruptor-menu:checked ~ .menu {
     visibility: visible;
   }
 
-  .contenedor-menu .interruptor-menu:checked ~ .menu > .contenido-menu {
+  .interruptor-menu:checked ~ .menu .contenido-menu {
     transform: scale(1);
     transition-duration: var(--velocidad-menu);
   }
 
-  .contenedor-menu
-    .interruptor-menu:checked
-    ~ .menu
-    > .contenido-menu
-    > .lista-menu {
+  .interruptor-menu:checked ~ .menu .contenido-menu .lista-menu {
     opacity: 1;
     transition: opacity 0.4s var(--animacion) 0.4s;
   }
 
-  .contenedor-menu .menu {
+  .menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -154,7 +183,7 @@ import Icon from './Icon.astro';
     justify-content: center;
   }
 
-  .contenedor-menu .menu > .contenido-menu {
+  .contenido-menu {
     backdrop-filter: blur(17px);
     background-color: #0106066b;
     border-radius: 50%;
@@ -168,7 +197,7 @@ import Icon from './Icon.astro';
     transition: all var(--velocidad-menu) var(--animacion);
   }
 
-  .contenedor-menu .menu > .contenido-menu > .lista-menu {
+  .lista-menu {
     text-align: center;
     max-width: 90dvw;
     max-height: 100dvh;
@@ -176,14 +205,18 @@ import Icon from './Icon.astro';
     transition: opacity 0.4s var(--animacion);
   }
 
-  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li {
+  .lista-enlaces {
     list-style: none;
+    padding: 0;
+  }
+
+  .item-menu {
     color: var(--text-color);
     font-size: var(--tamano-fuente-mediano);
     padding: 1rem;
   }
 
-  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a {
+  .enlace-menu {
     color: inherit;
     text-decoration: none;
     transition: color 0.4s var(--animacion);
@@ -192,48 +225,45 @@ import Icon from './Icon.astro';
     gap: 0.5rem;
   }
 
-  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a:hover {
+  .enlace-menu:hover {
     color: var(--primary-color);
   }
 
-  .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li > a:focus {
+  .enlace-menu:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 4px;
   }
 
   @media (width <= 768px) {
-    .contenedor-menu .menu > .contenido-menu {
+    .contenido-menu {
       width: 150vw;
       height: 150vw;
     }
 
-    .contenedor-menu .menu > .contenido-menu > .lista-menu > ul > li {
+    .item-menu {
       padding: 0.75rem;
     }
   }
+
+  @media (width >= 768px) {
+    .interruptor-menu,
+    .boton-hamburguesa {
+      display: none;
+    }
+
+    .menu {
+      inset: 0 0 auto 0;
+      height: fit-content;
+    }
+
+    .contenido-menu {
+      height: fit-content;
+      border-radius: 0;
+    }
+
+    .lista-enlaces {
+      display: flex;
+      gap: 2rem;
+    }
+  }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggler = document.querySelector('.toggler') as HTMLInputElement;
-
-    // Cerrar menú al hacer clic fuera o seleccionar un enlace
-    document.addEventListener('click', (e) => {
-      const target = e.target as Element;
-
-      // Verificar si el clic fue fuera del menú o en un enlace del menú
-      if (!target?.closest('.menu') && !target.closest('.toggler')) {
-        toggler.checked = false;
-        toggler.setAttribute('aria-expanded', 'false');
-      } else if (target.closest('.menu a')) {
-        toggler.checked = false;
-        toggler.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Actualizar aria-expanded cuando el menú se abre/cierra
-    toggler.addEventListener('change', () => {
-      toggler.setAttribute('aria-expanded', String(toggler.checked));
-    });
-  });
-</script>
